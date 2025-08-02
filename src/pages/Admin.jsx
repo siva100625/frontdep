@@ -19,8 +19,6 @@ const Admin = () => {
     const res = await api.get('/pets');
     setPets(res.data);
   };
-
-  // Add or update pet
   const addPet = async (e) => {
     e.preventDefault();
     if (editingPetId) {
@@ -32,20 +30,14 @@ const Admin = () => {
     setEditingPetId(null);
     fetchPets();
   };
-
-  // Delete pet
   const deletePet = async (id) => {
     await api.delete(`/pets/${id}`);
     fetchPets();
   };
-
-  // Set form for editing
   const editPet = (pet) => {
     setForm({ name: pet.name, type: pet.type, description: pet.description });
     setEditingPetId(pet.id);
   };
-
-  // If not authorized, return nothing
   if (!authorized) return null;
 
   return (

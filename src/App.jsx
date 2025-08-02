@@ -7,9 +7,9 @@ import Signup from './pages/SignUp';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/view" element={<Home />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
+      <Route path="/" element={<Signup />} />
       <Route path="/admin" element={<Admin />} />
     </Routes>
   );
